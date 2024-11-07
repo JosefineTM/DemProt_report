@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "report-generator"
+version = "0.1.0"
+description = "Module to generate automatic web interface reports with visualizations"
+authors = ["MoNA group"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.9.7 || >3.9.7,<4.0"
+streamlit = "1.39.0"
+holoviews = "1.16.2"
+plotly = "5.15.0"
+watchdog = "3.0.0"
+bokeh = "2.4.3"
+pyvis = "^0.3.2"
+pandas = "^2.2.3"
+openpyxl = "^3.1.5"
+xlrd = "^2.0.1"
+nbformat = "^5.10.4"
+nbclient = "^0.10.0"
+matplotlib = "^3.9.2"
+altair = "^5.4.1"
+itables = "^2.2.2"
+kaleido = "0.2.0"
+vl-convert-python = "^1.7.0"
+dataframe-image = "^0.2.6"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
