@@ -235,7 +235,7 @@ sections:
             component_type: "plot"
             plot_type: "interactive"
             visualization_tool: "plotly"
-            file_path: "example_data/DemProt/clini_moc/heatmap_importances_split.json"
+            file_path: "example_data/DemProt/mini_mod/heatmap_importances_split.json"
             title: "Heatmap of feature importance in the models over time."
             caption: "This plot visualises the importance of each feature in each of the models over the years. "
           - identifier: 4202
@@ -243,7 +243,7 @@ sections:
             component_type: "plot"
             plot_type: "interactive"
             visualization_tool: "plotly"
-            file_path: "example_data/DemProt/clini_moc/heatmap_importances_combined.json"
+            file_path: "example_data/DemProt/mini_mod/heatmap_importances_combined.json"
             title: "Heatmap of feature importance rank in the models over time."
             caption: "This plot visualises the rank of importance of each feature in each of the models over the years. "
           - identifier: 4203
@@ -251,7 +251,7 @@ sections:
             component_type: "plot"
             plot_type: "interactive"
             visualization_tool: "plotly"
-            file_path: "example_data/DemProt/clini_moc/ROC_curve_combined_best.json"
+            file_path: "example_data/DemProt/mini_mod/ROC_curve_combined_best.json"
             title: "ROC curves of models over time."
             caption: "Description"
           - identifier: 4204
@@ -259,7 +259,7 @@ sections:
             component_type: "plot"
             plot_type: "interactive"
             visualization_tool: "plotly"
-            file_path: "example_data/DemProt/clini_moc/dynamic_AUC.json"
+            file_path: "example_data/DemProt/mini_mod/dynamic_AUC.json"
             title: "AUC over time"
             caption: "Description"
 
@@ -269,28 +269,39 @@ sections:
         description: "Model with only confounders which are easy to test in the clinic."
         components:
           - identifier: 4301
-            name: "full_mod"
+            name: "heatmap_importance_fullmod"
             component_type: "plot"
-            plot_type: "static"
-            visualization_tool: ""
-            file_path: "example_data/DemProt/kaplan_meier_plot.png"
-            title: "Kaplan Meier plot of discovery cohort"
-            caption: "Kaplan Meier survival plot for the whole discovery cohort over time."
-
-      - identifier: 4400
-        name: "Model withouy proteins"
-        title: "Model without proteins"
-        description: "Model without proteins - only all confounders minus EGFR."
-        components:
-          - identifier: 4401
-            name: "full_mod"
+            plot_type: "interactive"
+            visualization_tool: "plotly"
+            file_path: "example_data/DemProt/clini_moc/heatmap_importances_split.json"
+            title: "Heatmap of feature importance in the models over time."
+            caption: "This plot visualises the importance of each feature in each of the models over the years. "
+          - identifier: 4302
+            name: "heatmap_rank_fullmod"
             component_type: "plot"
-            plot_type: "static"
-            visualization_tool: ""
-            file_path: "example_data/DemProt/kaplan_meier_plot.png"
-            title: "Kaplan Meier plot of discovery cohort"
-            caption: "Kaplan Meier survival plot for the whole discovery cohort over time."
+            plot_type: "interactive"
+            visualization_tool: "plotly"
+            file_path: "example_data/DemProt/clini_moc/heatmap_importances_combined.json"
+            title: "Heatmap of feature importance rank in the models over time."
+            caption: "This plot visualises the rank of importance of each feature in each of the models over the years. "
+          - identifier: 4303
+            name: "roc_full"
+            component_type: "plot"
+            plot_type: "interactive"
+            visualization_tool: "plotly"
+            file_path: "example_data/DemProt/clini_moc/ROC_curve_combined_best.json"
+            title: "ROC curves of models over time."
+            caption: "Description"
+          - identifier: 4304
+            name: "dyn_auc_full"
+            component_type: "plot"
+            plot_type: "interactive"
+            visualization_tool: "plotly"
+            file_path: "example_data/DemProt/clini_moc/dynamic_AUC.json"
+            title: "AUC over time"
+            caption: "Description"
 
+##Conclusion
   - identifier: 5000
     name: "Combined"
     title: "Combined results"
@@ -302,13 +313,13 @@ sections:
         description: "Combined plot of AUCs"
         components:
           - identifier: 5101
-            name: "full_mod"
+            name: "combined_auc"
             component_type: "plot"
-            plot_type: "static"
-            visualization_tool: ""
-            file_path: "example_data/DemProt/kaplan_meier_plot.png"
-            title: "Kaplan Meier plot of discovery cohort"
-            caption: "Kaplan Meier survival plot for the whole discovery cohort over time."
+            plot_type: "interactive"
+            visualization_tool: "plotly"
+            file_path: "example_data/DemProt/dynamic_AUC_COMBINED.json"
+            title: "Combined AUCs"
+            caption: "AUCs over time, with RSF = random survival model, and RF = random forest classifiers over time."
 
       - identifier: 5200
         name: "Conclusion"

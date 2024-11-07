@@ -1,9 +1,9 @@
-import dataframe_image as dfi
 import streamlit as st
+import dataframe_image as dfi
 import json
-import plotly.io as pio
 import pandas as pd
 from itables import show
+import plotly.io as pio
 
 st.markdown('''<h3 style='text-align: center; color: #023558;'>Normalization</h3>''', unsafe_allow_html=True)
 st.markdown('''<p style='text-align: center; color: #000000;'></p>''', unsafe_allow_html=True)
