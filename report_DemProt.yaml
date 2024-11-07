@@ -90,12 +90,12 @@ sections:
   - identifier: 24324
     name: "Discovery"
     title: "Discovery"
-    description: ""
+    description: "Description"
     subsections:
       - identifier: 5003
         name: "Cox proportional hazards regression"
         title: "Cox proportional hazards regression"
-        description: "Description for subsection"
+        description: "To find the candidate protein biomarkers, a Cox proportional hazards regression was run univariately over all the proteins while adjusting for EGFR, Age at baseline, sex, ethnicity (white, black, hispanic, other), education (less than highschool, high school, college and above) and BMI (underweight, helathy, overweight, obese). Subsequently, the p-values were adjusted for multiple testeing via false discovery rate (FDR) adjustment with an alpha of 0.05. "
         components:
           - identifier: 2247
             name: "kaplanmeier"
@@ -104,7 +104,7 @@ sections:
             visualization_tool: ""
             file_path: "example_data/DemProt/kaplan_meier_plot.png"
             title: "Kaplan Meier plot of discovery cohort"
-            caption: "Caption for kaplan meier"
+            caption: "Kaplan Meier survival plot for the whole discovery cohort over time."
           - identifier: 2248
             name: "cox_volcano"
             component_type: "plot"
@@ -112,7 +112,7 @@ sections:
             visualization_tool: "plotly"
             file_path: "example_data/DemProt/COX_volcano.json"
             title: "Volcano plot of Cox regression results"
-            caption: ""
+            caption: "Results from Cox regression. Proteins with a p-value < 0.1 are coloured for up-and down regulation. The colored proteins are the subsequent biomarker candidates."
           - identifier: 2250
             name: "cox_df"
             component_type: "dataframe"
@@ -129,30 +129,148 @@ sections:
             file_path: "example_data/DemProt/COX_paths.json"
             title: "Coefficient dependcy on alpha penalizer"
             caption: ""
-      - identifier: 5003
-        name: "Cox regression"
-        title: "Network Visualization2"
-        description: ""
+
+
+# Models
+## Survival
+  - identifier: 3000
+    name: "Survival models"
+    title: "Survival models"
+    description: "Description"
+    subsections:
+      - identifier: 3100
+        name: "Random survival forests"
+        title: "Random survival forests"
+        description: "Random survival forests"
         components:
-          - identifier: 2240
-            name: "network2"
+          - identifier: 3101
+            name: "kaplanmeier"
+            component_type: "plot"
+            plot_type: "static"
+            visualization_tool: ""
+            file_path: "example_data/DemProt/kaplan_meier_plot.png"
+            title: "Kaplan Meier plot of discovery cohort"
+            caption: "Kaplan Meier survival plot for the whole discovery cohort over time."
+          - identifier: 3102
+            name: "cox_volcano"
             component_type: "plot"
             plot_type: "interactive"
-            visualization_tool: "pyvis"
-            csv_network_format: "edgelist"
-            file_path: "example_data/MicW2Graph/man_example.csv"
-            title: "Network2 (edge list csv)"
-            caption: ""
-      - identifier: 5004
-        name: "Edge list"
-        title: "Edge list"
-        description: ""
+            visualization_tool: "plotly"
+            file_path: "example_data/DemProt/COX_volcano.json"
+            title: "Volcano plot of Cox regression results"
+            caption: "Results from Cox reg"
+
+## Non survival
+  - identifier: 4000
+    name: "Random forest models"
+    title: "Random forest models"
+    description: "Random forest models"
+    subsections:
+      - identifier: 4050
+        name: "Introduction"
+        title: "Introduction to the random forest classifiers"
+        description: "description of RFs"
         components:
-          - identifier: 3358
-            name: "df5"
-            component_type: "dataframe"
-            file_path: "example_data/MicW2Graph/man_example.csv"
-            file_format: "csv"
-            delimiter: ","
-            title: "Edge list (csv)"
-            caption: "This is the edge list of the network"
+          - identifier: 4101
+            name: "cases_recoding_illu"
+            component_type: "plot"
+            plot_type: "static"
+            visualization_tool: ""
+            file_path: "example_data/DemProt/cases_recoding.png"
+            title: "Recoding of cases to non-cases over time."
+            caption: "Illustration of the idea behind recoding of the cases and non-cases based on year cut-off. "
+      - identifier: 4100
+        name: "Full model"
+        title: "Full model"
+        description: "Model with all confounders and all candidate proteins"
+        components:
+          - identifier: 4101
+            name: "heatmap_importance_fullmod"
+            component_type: "plot"
+            plot_type: "interactive"
+            visualization_tool: "plotly"
+            file_path: "example_data/DemProt/full_mod/heatmap_importances_split.json"
+            title: "Heatmap of feature importance in the models over time."
+            caption: "This plot visualises the importance of each feature in each of the models over the years. "
+          - identifier: 4102
+            name: "heatmap_rank_fullmod"
+            component_type: "plot"
+            plot_type: "interactive"
+            visualization_tool: "plotly"
+            file_path: "example_data/DemProt/full_mod/heatmap_rank_split.json"
+            title: "Heatmap of feature importance rank in the models over time."
+            caption: "This plot visualises the rank of importance of each feature in each of the models over the years. "
+      - identifier: 4200
+        name: "Minimal model"
+        title: "Minimal model"
+        description: "Model with only age and sex as confounders"
+        components:
+          - identifier: 4201
+            name: "full_mod"
+            component_type: "plot"
+            plot_type: "static"
+            visualization_tool: ""
+            file_path: "example_data/DemProt/kaplan_meier_plot.png"
+            title: "Kaplan Meier plot of discovery cohort"
+            caption: "Kaplan Meier survival plot for the whole discovery cohort over time."
+
+      - identifier: 4300
+        name: "Clinical model"
+        title: "Clinical model"
+        description: "Model with only confounders which are easy to test in the clinic."
+        components:
+          - identifier: 4301
+            name: "full_mod"
+            component_type: "plot"
+            plot_type: "static"
+            visualization_tool: ""
+            file_path: "example_data/DemProt/kaplan_meier_plot.png"
+            title: "Kaplan Meier plot of discovery cohort"
+            caption: "Kaplan Meier survival plot for the whole discovery cohort over time."
+
+      - identifier: 4400
+        name: "Model withouy proteins"
+        title: "Model without proteins"
+        description: "Model without proteins - only all confounders minus EGFR."
+        components:
+          - identifier: 4401
+            name: "full_mod"
+            component_type: "plot"
+            plot_type: "static"
+            visualization_tool: ""
+            file_path: "example_data/DemProt/kaplan_meier_plot.png"
+            title: "Kaplan Meier plot of discovery cohort"
+            caption: "Kaplan Meier survival plot for the whole discovery cohort over time."
+
+  - identifier: 5000
+    name: "Combined"
+    title: "Combined results"
+    description: "Combination and conclusions"
+    subsections:
+      - identifier: 5100
+        name: "Combined model performances"
+        title: "Combined results"
+        description: "Combined plot of AUCs"
+        components:
+          - identifier: 5101
+            name: "full_mod"
+            component_type: "plot"
+            plot_type: "static"
+            visualization_tool: ""
+            file_path: "example_data/DemProt/kaplan_meier_plot.png"
+            title: "Kaplan Meier plot of discovery cohort"
+            caption: "Kaplan Meier survival plot for the whole discovery cohort over time."
+
+      - identifier: 5200
+        name: "Conclusion"
+        title: "Conclusion"
+        description: "Conclusion of thesis"
+        components:
+          - identifier: 5201
+            name: "full_mod"
+            component_type: "plot"
+            plot_type: "static"
+            visualization_tool: ""
+            file_path: "example_data/DemProt/kaplan_meier_plot.png"
+            title: "Kaplan Meier plot of discovery cohort"
+            caption: "Kaplan Meier survival plot for the whole discovery cohort over time."

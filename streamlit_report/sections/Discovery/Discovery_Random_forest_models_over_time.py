@@ -1,12 +1,10 @@
-import pandas as pd
-
 # import dataframe_image as dfi
+# from itables import show
+import pandas as pd
 import streamlit as st
 
-# from itables import show
-
 st.markdown(
-    """<h3 style='text-align: center; color: #023558;'>Edge list</h3>""",
+    """<h3 style='text-align: center; color: #023558;'>Random forest models over time</h3>""",
     unsafe_allow_html=True,
 )
 st.markdown(
