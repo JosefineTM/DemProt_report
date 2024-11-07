@@ -231,13 +231,37 @@ sections:
         description: "Model with only age and sex as confounders"
         components:
           - identifier: 4201
-            name: "full_mod"
+            name: "heatmap_importance_fullmod"
             component_type: "plot"
-            plot_type: "static"
-            visualization_tool: ""
-            file_path: "example_data/DemProt/kaplan_meier_plot.png"
-            title: "Kaplan Meier plot of discovery cohort"
-            caption: "Kaplan Meier survival plot for the whole discovery cohort over time."
+            plot_type: "interactive"
+            visualization_tool: "plotly"
+            file_path: "example_data/DemProt/clini_moc/heatmap_importances_split.json"
+            title: "Heatmap of feature importance in the models over time."
+            caption: "This plot visualises the importance of each feature in each of the models over the years. "
+          - identifier: 4202
+            name: "heatmap_rank_fullmod"
+            component_type: "plot"
+            plot_type: "interactive"
+            visualization_tool: "plotly"
+            file_path: "example_data/DemProt/clini_moc/heatmap_importances_rank_split.json"
+            title: "Heatmap of feature importance rank in the models over time."
+            caption: "This plot visualises the rank of importance of each feature in each of the models over the years. "
+          - identifier: 4203
+            name: "roc_full"
+            component_type: "plot"
+            plot_type: "interactive"
+            visualization_tool: "plotly"
+            file_path: "example_data/DemProt/clini_moc/ROC_curve_combined_best.json"
+            title: "ROC curves of models over time."
+            caption: "Description"
+          - identifier: 4204
+            name: "dyn_auc_full"
+            component_type: "plot"
+            plot_type: "interactive"
+            visualization_tool: "plotly"
+            file_path: "example_data/DemProt/clini_moc/dynamic_AUC.json"
+            title: "AUC over time"
+            caption: "Description"
 
       - identifier: 4300
         name: "Clinical model"
