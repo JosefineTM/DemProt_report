@@ -1,6 +1,6 @@
+import json
 import plotly.io as pio
 import streamlit as st
-import json
 
 st.markdown('''<h3 style='text-align: center; color: #023558;'>Full model</h3>''', unsafe_allow_html=True)
 st.markdown('''<p style='text-align: center; color: #000000;'>Model with all confounders and all candidate proteins</p>''', unsafe_allow_html=True)

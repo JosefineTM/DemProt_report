@@ -1,7 +1,7 @@
-import streamlit as st
 import dataframe_image as dfi
-import plotly.io as pio
+import streamlit as st
 import json
+import plotly.io as pio
 import pandas as pd
 from itables import show
 

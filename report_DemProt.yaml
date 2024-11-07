@@ -243,7 +243,7 @@ sections:
             component_type: "plot"
             plot_type: "interactive"
             visualization_tool: "plotly"
-            file_path: "example_data/DemProt/clini_moc/heatmap_importances_rank_split.json"
+            file_path: "example_data/DemProt/clini_moc/heatmap_importances_combined.json"
             title: "Heatmap of feature importance rank in the models over time."
             caption: "This plot visualises the rank of importance of each feature in each of the models over the years. "
           - identifier: 4203
