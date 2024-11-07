@@ -161,7 +161,7 @@ cython_debug/
 #.idea/
 
 # Temporary files
-streamlit_report/
+# streamlit_report/
 quarto_report/
 
 # VS Code
