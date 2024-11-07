@@ -1,10 +1,10 @@
+import json
 import plotly.io as pio
 from itables import show
-import dataframe_image as dfi
 import pandas as pd
-import json
 import streamlit as st
 import altair as alt
+import dataframe_image as dfi
 
 st.markdown('''<h3 style='text-align: center; color: #023558;'>Imputation</h3>''', unsafe_allow_html=True)
 st.markdown('''<p style='text-align: center; color: #000000;'></p>''', unsafe_allow_html=True)

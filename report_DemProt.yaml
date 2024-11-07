@@ -179,6 +179,15 @@ sections:
             file_path: "example_data/DemProt/cases_recoding.png"
             title: "Recoding of cases to non-cases over time."
             caption: "Illustration of the idea behind recoding of the cases and non-cases based on year cut-off. "
+          - identifier: 4102
+            name: "cases over time"
+            component_type: "plot"
+            plot_type: "interactive"
+            visualization_tool: "plotly"
+            file_path: "example_data/DemProt/intro/cases_non_cases_time.json"
+            title: "N cases and cases over time."
+            caption: "Depending on which time cut-off, the classifier is run on, the number of cases and non-cases change. Here, the development over time is presented."
+            
       - identifier: 4100
         name: "Full model"
         title: "Full model"
@@ -197,9 +206,25 @@ sections:
             component_type: "plot"
             plot_type: "interactive"
             visualization_tool: "plotly"
-            file_path: "example_data/DemProt/full_mod/heatmap_rank_split.json"
+            file_path: "example_data/DemProt/full_mod/heatmap_importances_rank_split.json"
             title: "Heatmap of feature importance rank in the models over time."
             caption: "This plot visualises the rank of importance of each feature in each of the models over the years. "
+          - identifier: 4103
+            name: "roc_full"
+            component_type: "plot"
+            plot_type: "interactive"
+            visualization_tool: "plotly"
+            file_path: "example_data/DemProt/full_mod/ROC_curve_combined_best.json"
+            title: "ROC curves of models over time."
+            caption: "Description"
+          - identifier: 4104
+            name: "dyn_auc_full"
+            component_type: "plot"
+            plot_type: "interactive"
+            visualization_tool: "plotly"
+            file_path: "example_data/DemProt/full_mod/dynamic_AUC.json"
+            title: "AUC over time"
+            caption: "Description"
       - identifier: 4200
         name: "Minimal model"
         title: "Minimal model"
